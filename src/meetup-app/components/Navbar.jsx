@@ -1,12 +1,14 @@
 import React from "react";
 import { UseData } from "../context/DataContext";
 import Modal from "./Modal";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const { MeetupObj, dispatch } = UseData();
+  const navigate = useNavigate();
   return (
     <nav className="flex justify-between p-1 border-bottom bg-gray-100">
-      <h1>Meetup</h1>
+      <h1 onClick={() => navigate("/")}>Meetup</h1>
       <input
         type="text"
         value={MeetupObj.search}

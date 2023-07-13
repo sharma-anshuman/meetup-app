@@ -4,9 +4,10 @@ import { UseData } from "../context/DataContext";
 const Modal = ({ item }) => {
   const [open, setOpen] = useState(false);
   const { dispatch } = UseData();
-  const submitHandler = () => {
+  const submitHandler = (event) => {
     setOpen(false);
     dispatch({ type: "rsvp", payload: item.id });
+    event.preventDefault();
   };
   return (
     <div>
