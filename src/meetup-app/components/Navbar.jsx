@@ -8,7 +8,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   return (
     <nav className="flex justify-between p-1 border-bottom bg-gray-100">
-      <h1 onClick={() => navigate("/")}>Meetup</h1>
+      <h1 className="font-bold cursor-pointer text-2xl" onClick={() => navigate("/")}>Meetup</h1>
       <input
         type="text"
         value={MeetupObj.search}
