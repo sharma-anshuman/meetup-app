@@ -7,7 +7,6 @@ const Navbar = () => {
   return (
     <nav className="flex justify-between p-1 border-bottom bg-gray-100">
       <h1>Meetup</h1>
-      <Modal />
       <input
         type="text"
         value={MeetupObj.search}

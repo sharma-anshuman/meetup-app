@@ -2,7 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { UseData } from "../context/DataContext";
 import Navbar from "../components/Navbar";
-
+import Modal from "../components/Modal";
 const DetailsPage = () => {
   const { id } = useParams();
   const {
@@ -67,7 +67,8 @@ const DetailsPage = () => {
               </div>
             ))}
           </div>
-          <button className="p-2 bg-gray-100 cursor-pointer hover:bg-gray-200 rounded">RSVP</button>
+          {/* <button className="p-2 bg-gray-100 cursor-pointer hover:bg-gray-200 rounded">RSVP</button> */}
+          <Modal item={meet} />
         </div>
       </div>
     </div>

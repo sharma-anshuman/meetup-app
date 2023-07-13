@@ -29,11 +29,25 @@ const DataContext = ({ children }) => {
           }),
         };
       }
+      case "rsvp": {
+        return {
+          ...acc,
+          meetups: [
+            ...acc.meetups.map((item) =>
+              item.id === payload ? { ...item, rsvp: true } : item
+            ),
+          ],
+        };
+      }
     }
   };
 
   const [MeetupObj, dispatch] = useReducer(TaskHandler, {
-    meetups: [...meetups],
+    meetups: [
+      ...meetups.map((item) => {
+        return { ...item, rsvp: false };
+      }),
+    ],
     meetupsToShow: [...meetups],
     type: "Both",
     search: "",
